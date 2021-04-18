@@ -7,7 +7,7 @@ pipeline {
                 } 
                steps {
                      echo "hello git"
-                     sh sleep 50
+                     sh 'sleep 50'
               }
         }
          stage('build'){
@@ -16,7 +16,7 @@ pipeline {
               } 
                steps {
                       echo "hello git"
-                      sh sleep 50
+                      sh 'sleep 50'
              }
         }
     }
