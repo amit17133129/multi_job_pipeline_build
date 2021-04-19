@@ -3,7 +3,7 @@ pipeline {
       stages {
           stage('gitscm'){
                 agent {
-                    label 'myk8sslave1'
+                    label 'mljen'
                 } 
                steps {
                      echo "hello git"
@@ -12,7 +12,7 @@ pipeline {
         }
          stage('build'){
                 agent {
-                   label 'myk8sslave1'
+                   label 'mljen'
               } 
                steps {
                       echo "hello git"
