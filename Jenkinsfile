@@ -19,7 +19,7 @@ pipeline {
               } 
                steps {
                       echo "hello git"
-                      sh 'sudo kubectl get pods'
+                      sh 'sudo kubectl get pods -o wide'
              }
         }
     }
