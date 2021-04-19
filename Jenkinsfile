@@ -18,7 +18,7 @@ pipeline {
                    label 'myslavw1'
               } 
                steps {
-                      echo "hello git"
+                      echo "hello git new file"
                       sh 'sudo kubectl get pods -o wide'
              }
         }
