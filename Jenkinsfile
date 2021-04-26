@@ -3,19 +3,19 @@ pipeline {
       stages {
           stage('gitscm'){
                 agent {
-                    label 'myslavw1'
+                    label 'mlopsnode'
                 } 
                 steps {
              
-                    sh 'sudo kubectl run myos123  --image=docker123kubernetes123/nnnnnnnnnnewwww:v1'
-                    sh 'sudo kubectl expose pod myos123 --type=NodePort  --port=4444'
-                    sh 'sudo kubectl get pods -o wide | grep myos123'
+                    sh 'sudo kubectl create deployment mlops  --image=docker123kubernetes123/updated_keras_mlops:v4'
+                    sh 'sudo kubectl expose deployment mlops --type=NodePort  --port=4444'
+                    sh 'sudo kubectl get pods -o wide | grep mlops'
                     
                 }
         }
          stage('build'){
                 agent {
-                   label 'myslavw1'
+                   label 'mlopsnode'
               } 
                steps {
                       echo "hello git new file"
