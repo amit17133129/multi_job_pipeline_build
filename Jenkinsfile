@@ -4,9 +4,9 @@ pipeline {
           stage('Building_Heart_Prection_Pod'){
                 steps {
              
-                    sh 'sudo kubectl create deployment mlops_heart_pred  --image=docker123kubernetes123/heartprediction_mlops:v1   --kubeconfig admin.conf'
-                    sh 'sudo kubectl expose deployment mlops_heart_pred --type=NodePort  --port=4444   --kubeconfig admin.conf'
-                    sh 'sudo kubectl get pods -o wide | grep mlops_heart_pred    --kubeconfig admin.conf'
+                    sh 'sudo kubectl create deployment mlopsheartpred  --image=docker123kubernetes123/heartprediction_mlops:v1   --kubeconfig admin.conf'
+                    sh 'sudo kubectl expose deployment mlopsheartpred --type=NodePort  --port=4444   --kubeconfig admin.conf'
+                    sh 'sudo kubectl get pods -o wide | grep mlopsheartpred    --kubeconfig admin.conf'
                     
                 }
         }
