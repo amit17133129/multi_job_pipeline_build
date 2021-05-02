@@ -1,25 +1,19 @@
 pipeline {
       agent  none
       stages {
-          stage('gitscm'){
-                agent {
-                    label 'mlopsnode'
-                } 
+          stage('Building_Heart_Prection_Pod'){
                 steps {
              
-                    sh 'sudo kubectl create deployment mlops  --image=docker123kubernetes123/updated_keras_mlops:v4'
-                    sh 'sudo kubectl expose deployment mlops --type=NodePort  --port=4444'
-                    sh 'sudo kubectl get pods -o wide | grep mlops'
+                    sh 'sudo kubectl create deployment mlops_heart_pred  --image=docker123kubernetes123/heartprediction_mlops:v1   --kubeconfig admin.conf'
+                    sh 'sudo kubectl expose deployment mlops_heart_pred --type=NodePort  --port=4444   --kubeconfig admin.conf'
+                    sh 'sudo kubectl get pods -o wide | grep mlops_heart_pred    --kubeconfig admin.conf'
                     
                 }
         }
-         stage('build'){
-                agent {
-                   label 'mlopsnode'
-              } 
+         stage('logs'){
                steps {
-                      echo "hello git new file"
-                      sh 'sudo kubectl get pods -o wide'
+                      sh 'sudo kubectl get pods -o wide  --kubeconfig admin.conf'
+                      sh 'sudo kubectl get svc    --kubeconfig admin.conf'
              }
         }
     }
